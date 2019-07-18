@@ -3,17 +3,91 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>Webpack Showcase</title>
-    
+    <title>Tip Calculator</title>
+    <link rel="stylesheet"
+          href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+          integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+          crossorigin="anonymous">
 </head>
 
 <body>
     <div class="container">
         <header class="page-header">
-            <h1>Web Dev</h1>
-            <h2>Super Awesome</h2>
+            <h1>Tip Calculator</h1>
+            <h3>How much do you owe?</h3>
         </header>
 
+        <main>
+            <div class="input-group mb-3">
+                <div class="input-group-prepend">
+                    <span class="input-group-text">$</span>
+                </div>
+                <input type="number"
+                       min="0"
+                       value=0
+                       class="form-control"
+                       aria-label="Amount"
+                       id="amount" />
+            </div>
+            <div class="btn-group tip-percents"
+                 role="group">
+                <button type="button"
+                        data-amount=".10"
+                        class="btn btn-primary">10%</button>
+                <button type="button"
+                        data-amount=".15"
+                        class="btn btn-primary">15%</button>
+                <button type="button"
+                        data-amount=".20"
+                        class="btn btn-primary">20%</button>
+                <button type="button"
+                        data-amount=".0"
+                        id="custButton"
+                        class="btn btn-primary">Custom</button>
+            </div>
+            <div class="input-group mb-3">
+                <div class="input-group-prepend">
+                    <span class="input-group-text">.</span>
+                </div>
+                <input type="number"
+                       min="0"
+                       value=0
+                       class="form-control"
+                       id="custTip" />
+            </div>
+            <div class="input-group mb-3">
+                <div class="input-group-prepend">
+                    <span class="input-group-text">Number of people:</span>
+                </div>
+                <input type="number"
+                       min="0"
+                       value=0
+                       class="form-control"
+                       id="numPeople" />
+            </div>
+            <p id="description">You are tipping .</p>
+            <div>
+                <table class="table table-bordered">
+                    <tbody>
+                        <tr>
+                            <td>Bill Amount: <span id="bill"></span></td>
+                        </tr>
+                        <tr>
+                            <td>Tip Percentage: <span id="tip-percent"></span></td>
+                        </tr>
+                        <tr>
+                            <td>Amount of tip: <span id="tip-amount"></span></td>
+                        </tr>
+                        <tr>
+                            <td class="total">Total to be Paid: <span id="total-bill"></span></td>
+                        </tr>
+                        <tr>
+                            <td class="total">Total per Person: <span id="per-person"></span></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </main>
     </div>
 </body>
 
