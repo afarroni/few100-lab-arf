@@ -1,31 +1,21 @@
 //import { runApp } from "../src";
 import { makeCurrency, formatAsPercent, validateInput } from "../src/utils";
 
-describe('the thing that calculates', () => {
-    // beforeEach(function () {
-    //     runApp();
-    // })
-    // it("should call carService using spyOn with a fake implementation", function () {
-    //     const getCarsFake = function () {
-    //         return [
-    //             { year: 2016, make: "Test", model: "Car", rearWheelHorsepower: 0, flywheelHorsepower: 0, weight: 1000, et: 10 }
-    //         ];
-    //     };
-    //     let carSrvSpy = spyOn(CarServiceJs, "getCars").and.callFake(getCarsFake);
-    //     let result = CarServiceJs.getCars();
-    //     expect(result[0].year).toEqual(2016);
-    // });
-    // it("should call carService using createSpy", function () {
-    //     let carService = { getCars: jasmine.createSpy() };
-    //     let engineCalc = new EngineCalculationsJs(carService);
-    //     //calculateCarData() calls getCars from within:
-    //     let result = engineCalc.calculateCarData();
-    //     expect(carService.getCars).toHaveBeenCalled();
-    // });
-    // afterEach(() => {
+// describe('the thing that calculates', () => {
+//     beforeEach(function () {
+//         const buttons = document.querySelectorAll('.tip-percents button');
+//         const inputAmount: HTMLInputElement = document.querySelector('#amount');
+//         const customTip: HTMLInputElement = document.querySelector("#custTip");
+//         const numberOfPeople: HTMLInputElement = document.querySelector("#numPeople");
 
-    // });
-});
+//         let numPeople = 0;
+//         let bill = 0;
+//         let tipPercentage: number;
+//         runApp();
+//     })
+//     it('setUp should call these methods', () => {
+//     });
+// });
 
 describe('utils', () => {
     it('makeCurrency should return the number as currency', () => {
