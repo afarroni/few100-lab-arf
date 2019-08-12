@@ -1,5 +1,5 @@
 import './styles.css';
-import { makeCurrency, percentFormat, validateInput } from './utils';
+import { makeCurrency, formatAsPercent, validateInput } from './utils';
 
 const buttons = document.querySelectorAll('.tip-percents button');
 const inputAmount: HTMLInputElement = document.querySelector('#amount');
@@ -11,7 +11,7 @@ let bill = 0;
 let tipPercentage: number;
 runApp();
 
-function runApp() {
+export function runApp() {
     setUp();
 }
 
@@ -61,13 +61,6 @@ function validateAndSetInput() {
     numPeople = validateInput(numberOfPeople);
 }
 
-function setCustomTip() {
-    const that = this;
-    let customTipAmount = parseFloat(that.value) / 100;
-    document.getElementById('custButton').dataset.amount = customTipAmount.toString();
-    displayTipPercentage();
-}
-
 function initializeTipPercentage() {
     // get tip percentage from storage, or set to .20
     if (typeof (Storage) !== "undefined") {
@@ -78,14 +71,21 @@ function initializeTipPercentage() {
     displayTipPercentage();
 }
 
+function setCustomTip() {
+    const that = this;
+    let customTipAmount = parseFloat(that.value) / 100;
+    document.getElementById('custButton').dataset.amount = customTipAmount.toString();
+    displayTipPercentage();
+}
+
 function displayTipPercentage() {
     buttons.forEach((b: HTMLButtonElement) => {
         if (tipPercentage == parseFloat(b.dataset.amount)) {
             if (b.id !== "custButton") {
                 b.disabled = true;
             }
-            document.getElementById("description").innerHTML = `You are tipping ${percentFormat(b.dataset.amount)}.`;
-            document.getElementById("tip-percent").innerHTML = percentFormat(b.dataset.amount);
+            document.getElementById("description").innerHTML = `You are tipping ${formatAsPercent(b.dataset.amount)}.`;
+            document.getElementById("tip-percent").innerHTML = formatAsPercent(b.dataset.amount);
         }
     });
 }

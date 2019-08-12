@@ -8,7 +8,7 @@ export function makeCurrency(num: number): string {
     }
 }
 
-export function percentFormat(dec: string): string {
+export function formatAsPercent(dec: string): string {
     return `${Math.round(parseFloat(dec) * 100)}%`;
 }
 
